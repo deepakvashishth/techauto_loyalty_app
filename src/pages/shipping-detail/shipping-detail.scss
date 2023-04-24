@@ -1,0 +1,58 @@
+page-shipping-detail {
+
+    .specification {
+        font-size: 13px;
+        line-height: 19px;
+    }
+
+    .chatus{
+        text-align: left;
+        font-size: 13px;
+        margin-top: 20px;
+        line-height: 22px;
+        
+        a{
+            color: #0014ff;
+            text-decoration: underline;
+        }
+    }
+
+    .slide-zoom {
+        height: 194px;
+        display: contents;
+        img {
+            // width: 100%;
+            width:180px!important;
+            height: 100%;
+        }
+    }
+
+    table{
+        table-layout: fixed;
+        box-sizing: border-box;
+        table-layout: fixed;
+        width: 100%;
+
+        tr{
+
+            border-bottom: 1px solid #eaeaea;
+
+            td{
+                padding: 10px 16px;
+                font-size: 12px;
+
+                &:first-child{
+                    font-weight: 600;
+                    width: 145px;
+                }
+            }
+        }
+    }
+
+    .shipped-detail .content{
+        padding: 10px 36px 10px 16px;
+    }
+    .shipped-detail .content.edit-content a.edit-field{
+        right: 10px;
+    }
+}

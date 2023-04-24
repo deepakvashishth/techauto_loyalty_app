@@ -1,0 +1,134 @@
+
+
+
+<ion-header>
+    <ion-navbar>
+        <ion-title>cancelpolicy-modal</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding class="popup-modal">
+    
+    <div class="modal-center">
+        <div class="modal-content in-modal">
+            <form #f="ngForm">
+                <h1>{{'Tech Auto' | translate}} </h1>
+                <p>{{ 'Are you sure to redeem your' | translate }} {{redeemPoint}} {{'Points' | translate}}? </p>
+                <div class="number-content">
+                    <p>{{'Enter your 6 digit number that sent to' | translate}} <span class="blue-color lineh24">+91 {{data.mobile_no}}</span>
+                    </p>
+                </div>
+                <div class="input-section">
+                    <div class="input-adjust m0">
+                        <input class="pl16 radius-none" type="tel" name="otp" placeholder="{{'Enter OTP' | translate}}" #otp="ngModel" [(ngModel)]="data.otp" (ngModelChange)="otpvalidation()" required>
+                        <div class="otp-error" *ngIf="!otp_value && otp?.touched">
+                            <p>{{'Wrong OTP value' | translate}}</p>
+                        </div>
+                    </div>
+                    <div class="resend text-right">
+                        <a (click)="resendOtp()">{{'Resend' | translate}}</a>
+                    </div>
+                    <ng-container *ngIf="redeemType == 'Cash'">
+                        
+                        <div class="data" *ngIf="data.bank_name && data.account_holder_name && data.account_no && data.ifsc_code">
+                            <table>
+                                <tr>
+                                    <td>{{'Account Holder Name' | translate}}</td>
+                                    <th>{{data.account_holder_name}}</th>
+                                </tr>
+                                <tr>
+                                    <td>{{'Bank Name' | translate}}</td>
+                                    <th>{{data.bank_name}}</th>
+                                </tr>
+                                <tr>
+                                    <td>{{'Account No.' | translate}}</td>
+                                    <th>{{data.account_no}}</th>
+                                </tr>
+                                <tr>
+                                    <td>{{'IFSC Code' | translate}}</td>
+                                    <th>{{data.ifsc_code}}</th>
+                                </tr>
+                                
+                                <tr *ngIf="data.payment_type">
+                                    <td> {{data.payment_type }} {{'Number' | translate}}</td>
+                                    <th>{{data.paytm_no}}</th>
+                                </tr>
+                                
+                            </table>    
+                        </div>
+                        
+                        
+                        
+                        <ng-container *ngIf="!data.account_holder_name || !data.account_no || !data.bank_name || !data.ifsc_code">
+                            <div class="adhar alert-card">
+                                <table>
+                                    <tr>
+                                        <td>
+                                            <p>{{ 'Bank details are missing Please update your bank details' | translate}}</p>
+                                            <a round ion-button small (click)="goRegestrationsPage()">{{'Update detail' | translate}}</a>
+                                        </td>
+                                    </tr>
+                                    
+                                </table>
+                            </div>
+                        </ng-container>
+                       
+                    </ng-container>
+                     <!-- <div class="document_req" >
+                            <a (click)="goRegestrationsPage()"> <span class="document_req" style="color:blue;text-decoration: underline;">{{ 'Update Profile' | translate}}</span>
+                            </a>
+                        </div> -->
+                </div>
+                
+                <ng-container *ngIf="redeemType == 'gift'">
+                    <ng-container *ngIf="(data.document_image && data.document_no) && data.document_type">
+                        <div class="check-bx">
+                            <ion-item>
+                                <ion-checkbox color="secondary" checked="true" name="check1" #check1="ngModel" [(ngModel)]="data.check1" (click)="myNumber()">
+                                </ion-checkbox>
+                            </ion-item>
+                            <p>{{'Same as Permanent Address' | translate}}</p>
+                        </div>
+                        
+                        <div class="input-section">
+                            <div class="input-adjust m0">
+                                <textarea class="pl16 radius-none" type="text" name="shipping_address" placeholder="Enter Shipping Address" #shipping_address="ngModel" [(ngModel)]="data.shipping_address" required></textarea>
+                            </div>
+                        </div>
+                    </ng-container>
+                    
+                    
+                    <ng-container *ngIf="!data.document_image || !data.document_no || !data.document_type" >
+                        <div class="adhar alert-card">
+                            <table>
+                                <tr>
+                                    <td>
+                                        <p>{{ 'Documents are missing Please update your documents' | translate}}</p>
+                                        <a round ion-button small (click)="goRegestrationsPage()">{{'Update detail' | translate}}</a>
+                                    </td>
+                                </tr>
+                                
+                            </table>
+                        </div>
+                    </ng-container>
+                </ng-container>
+                
+                
+                
+                
+                <div class="check-bx">
+                    <ion-item>
+                        <!-- <ion-checkbox color="secondary" checked="true" name="check" #check="ngModel" [(ngModel)]="data.check" required></ion-checkbox> -->
+                        <ion-checkbox color="secondary" checked="true" name="check" #check="ngModel" [(ngModel)]="data.check" >
+                        </ion-checkbox>
+                    </ion-item>
+                    <p>{{'I have read' | translate}} <a (click)="goOnCancelationPolicy()">{{'Cancellation Policy' | translate}}</a></p>
+                </div>
+                <div class="footer-btn">
+                    <a class="outline-btn" (click)="dismiss()">{{'No' | translate}}</a>
+                    <button class="fill-btn"  [disabled]="!data.check" (click)="submit()">{{'Yes' | translate}}</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</ion-content>

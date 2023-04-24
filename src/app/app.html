@@ -1,0 +1,89 @@
+
+<ion-menu [content]="content"  >
+    <!-- swipeEnabled="false" -->
+    <ion-content class="primary-bg">
+        <ion-list>
+            <ion-item class="transparent" (click)="goOnDigitalcatalogPage(); closeMenu()">
+                <ion-icon item-start color="primary">
+                    <img src="assets/navigation/book.svg">
+                </ion-icon>
+                {{'Catalogues' | translate}}
+            </ion-item>
+
+            <ion-item class="transparent" (click)="goOnOffersListPage(); closeMenu()">
+                <ion-icon item-start color="primary">
+                    <img src="assets/navigation/offer.svg">
+                </ion-icon>
+                {{'SCHEME' | translate}}
+            </ion-item>
+
+            <ion-item class="transparent" (click)="goOnGiftGallary(); closeMenu()">
+                <ion-icon item-start color="primary">
+                    <img src="assets/navigation/gift.svg">
+                </ion-icon>
+                {{'Gift Gallery' | translate}}
+            </ion-item>
+
+
+            <ion-item class="transparent" (click)="goOnGiftListPage(); closeMenu()">
+                <ion-icon item-start color="primary">
+                    <img src="assets/navigation/redeem.svg">
+                </ion-icon>
+                {{'Redeem My Points' | translate}}
+            </ion-item>
+            
+
+            <ion-item class="transparent" (click)="gotoHistory(); closeMenu()">
+                <ion-icon item-start color="primary">
+                    <img src="assets/navigation/swap_horiz.svg">
+
+                </ion-icon>
+                {{'Redeem Tracker' | translate}}
+            </ion-item>
+
+           
+
+
+            <ion-item class="transparent" (click)="goOnVideoPage(); closeMenu();">
+                <ion-icon item-start color="primary">
+                    <img src="assets/navigation/video.svg">
+
+                </ion-icon>
+                {{'Videos' | translate}}
+            </ion-item>
+
+            <ion-item class="transparent" (click)="goOnfaqPage(); closeMenu();">
+                <ion-icon item-start color="primary">
+                    <img src="assets/navigation/faq.svg">
+                </ion-icon>
+                {{'FAQ' | translate}}
+            </ion-item>
+
+            <ion-item class="transparent" (click)="goAboutPage(); closeMenu();">
+                <ion-icon item-start color="primary">
+                    <img src="assets/navigation/about.svg">
+
+                </ion-icon>
+                {{'About Us' | translate}}
+            </ion-item>
+
+            <ion-item class="transparent" (click)="goOnContact(); closeMenu();">
+                <ion-icon item-start color="primary">
+                    <img src="assets/navigation/phone.svg">
+
+                </ion-icon>
+                {{'Contact Us' | translate}}
+            </ion-item>
+            <ion-item class="transparent" (click)="goOnProfile(); closeMenu();">
+                <ion-icon item-start color="primary">
+                    <img src="assets/navigation/person.svg">
+
+                </ion-icon>
+                {{'Profile' | translate}}
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-menu>
+
+
+<ion-nav id="nav" #content [root]="rootPage"></ion-nav>
