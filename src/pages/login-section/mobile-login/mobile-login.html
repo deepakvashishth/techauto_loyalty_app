@@ -1,0 +1,33 @@
+
+    
+    <ion-content padding >
+        <div class="cs-card">
+            <div class="card-logo">
+                <img src="assets/imgs/logo.png">
+                <button ion-button color="dark" class="fix-btn" clear (click)="languageBack()">
+                    <ion-icon name="arrow-back"></ion-icon>
+                </button>
+            </div>
+            <div class="cs-card-content">
+                <div>
+                    <h2>{{'Enter your mobile number to get started' | translate}}!</h2>
+                    <form #f="ngForm">
+                        <div class="input-block" [ngClass]="{'error': !mobile_no.valid && mobile_no.touched}">
+                            <div class="rel">
+                                <input type="tel" name="" placeholder="{{'Mobile number' | translate}}" name="mobile_no" #mobile_no="ngModel" [(ngModel)]="data.mobile_no" [ngClass]="{'is-invalid':f.submitted && mobile_no?.invalid}" required min="0" maxlength="10" minlength="10">
+                                <ion-icon name="phone-portrait"></ion-icon>
+                            </div>
+                            <ng-container *ngIf="data.mobile_no!=''">
+                                <p *ngIf="!mobile_no.valid && mobile_no.touched">{{'Enter valid Mobile No.' | translate}}</p>
+                            </ng-container>
+                        </div>
+                    </form>
+                </div>
+                <div class="text-right footers-btn">
+                    <button class="capitalize" ion-button color="primary" round  (click)="f.valid && submit()" [disabled]="hidevalue">{{'Continue' | translate}} {{maxTime ? '('+maxTime+')' : ''}}</button>
+                </div>
+            </div>
+        </div>
+    </ion-content>
+    
+    

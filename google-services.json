@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "792125577232",
+    "project_id": "tech-auto-2ce72",
+    "storage_bucket": "tech-auto-2ce72.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:792125577232:android:fb7bb55accc9b84be75295",
+        "android_client_info": {
+          "package_name": "com.techauto.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "792125577232-si6ad36dme4ch5g0o828jcghom7t0kkp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDcCKyqAM0Kh0fpL20aAPoDUSodA6ae4Zk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "792125577232-si6ad36dme4ch5g0o828jcghom7t0kkp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
