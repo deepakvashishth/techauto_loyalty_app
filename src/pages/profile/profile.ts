@@ -467,7 +467,7 @@ export class ProfilePage {
         let image = "";
         let app_url = "https://play.google.com/store/apps/details?id=com.techauto.app";
         
-        this.socialSharing.share("Hey there join me (" + this.karigar_detail.full_name + "-" + this.karigar_detail.mobile_no + ") on Bonson Electricals, a Electrician app. Enter my code *" + this.karigar_detail.referral_code + "* to earn points back in your wallet!", "Reffral", image, app_url)
+        this.socialSharing.share("Hey there join me (" + this.karigar_detail.full_name + "-" + this.karigar_detail.mobile_no + ") on Tech Auto App. Enter my code *" + this.karigar_detail.referral_code + "* to earn points back in your wallet!", "Reffral", image, app_url)
         .then(resp => {
             console.log(resp);
             
