@@ -134,7 +134,7 @@ export class MyApp {
                     }
                     else
                     {
-                        console.log('else');
+                         console.log('else');
                         this.nav.setRoot(TabsPage);
                         this.initPushNotification();
                         // this.nav.setRoot(HomePage);
