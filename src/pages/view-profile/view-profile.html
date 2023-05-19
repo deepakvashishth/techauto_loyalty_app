@@ -15,6 +15,9 @@
         <a (click)="closeModal()" class="cs-close"><i class="material-icons">clear</i></a>	
       </div> -->
       <div class="img-radius flat-img">
+        <pinch-zoom *ngIf="type == 'point_img'" class="pinch-big_zoom">
+          <img  src="{{profile_pic}}">
+        </pinch-zoom>
         <pinch-zoom *ngIf="type != 'base_64'" class="pinch-big_zoom">
           <img  src="{{uploadUrl+profile_pic}}">
         </pinch-zoom>

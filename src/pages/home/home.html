@@ -176,6 +176,7 @@
                 </ion-icon>
                 {{'Contact Us' | translate}}
             </ion-item>
+           
             <ion-item class="transparent" (click)="viewProfie();">
                 <ion-icon item-start color="primary">
                     <img src="assets/navigation/person.svg">
@@ -183,6 +184,37 @@
                 </ion-icon>
                 {{'Profile' | translate}}
             </ion-item>
+
+            <ion-item class="transparent lgn" (click)="change_language();">
+                <ion-icon item-start color="primary">
+                    <img src="assets/imgs/language.png">
+
+                </ion-icon>
+                {{'Language' | translate}} 
+
+            </ion-item>
+      
+            <!-- <li (click)="viewDetail()">
+                <div class="img-view">
+                    <img src="assets/imgs/home-icon/gift-point.svg">
+                </div>
+                <p>{{'Advance Point Detail' | translate}}</p>
+            </li> -->
+       
+
+
+            <ion-item class="transparent" (click)="viewDetail();">
+                <ion-icon item-start color="primary">
+                    <img src="assets/imgs/home-icon/gift-point.svg">
+
+                </ion-icon>
+                {{'Techauto Point Detail' | translate}} 
+
+            </ion-item>
+
+
+
+           
         </ion-list>
     </div>
 </div>
