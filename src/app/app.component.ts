@@ -133,7 +133,7 @@ export class MyApp {
                         this.nav.setRoot(LanguagePage);
                     }
                     else
-                    {
+                    { 
                          console.log('else');
                         this.nav.setRoot(TabsPage);
                         this.initPushNotification();
