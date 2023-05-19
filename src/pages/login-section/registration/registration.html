@@ -73,7 +73,7 @@
                     </ion-item>
                     
                     <ion-item class="cs-input" [ngClass]="{'error':f.submitted && mobile_no?.invalid}">
-                        <ion-label floating>{{'Mobile No' | translate}}.*</ion-label>
+                        <ion-label floating>{{'Mobile No' | translate}}.</ion-label>
                         <ion-input type="number" name="mobile_no" #mobile_no="ngModel" [(ngModel)]="data.mobile_no" required (keypress)="MobileNumber($event)" readonly></ion-input>
                     </ion-item>
                     
@@ -107,10 +107,10 @@
         <div class="ragistration-fields">
             <div class="cs-form">
                 <ion-list>
-                    <ion-item class="cs-input">
-                        <ion-label floating>{{'Address (optional)' | translate}}</ion-label>
+                    <ion-item class="cs-input" [ngClass]="{'error':f.submitted && address?.invalid}">
+                        <ion-label floating>{{'Address' | translate}}*</ion-label>
                         
-                        <ion-input type="text" name="address" #address="ngModel" [(ngModel)]="data.address" (ngModelChange)="caps_add(data.address)"></ion-input>
+                        <ion-input type="text" name="address" #address="ngModel" [(ngModel)]="data.address" (ngModelChange)="caps_add(data.address)" required ></ion-input>
                     </ion-item>
                     
                     <ion-item class="cs-input" [ngClass]="{'error':f.submitted && pincode?.invalid}">
@@ -151,9 +151,9 @@
             <div class="cs-form">
                 <ion-list>
                     <ion-item class="cs-select" [ngClass]="{'error':f.submitted && document_type?.invalid}">
-                        <ion-label>{{'Select Document' | translate}}*</ion-label>
+                        <ion-label>{{'Select Document' | translate}}</ion-label>
                         <ion-select name="document_type" [(ngModel)]="data.document_type" #document_type="ngModel" required>
-                            <ion-option value="Adharcard">{{'Aadhaar card' | translate}}</ion-option>
+                            <ion-option value="Aadharcard">{{'Aadhaar card' | translate}}</ion-option>
                             <!-- <ion-option value="PanCard">{{'Pan Card' | translate}}</ion-option> -->
                             <ion-option value="VoterCard">{{'Voter Card' | translate}}</ion-option>
                         </ion-select>
@@ -195,16 +195,16 @@
         
         <ng-container *ngIf="data.user_type=='1'">
             <div class="heading line" >
-                <p >{{'Dealer Information' | translate}}</p>
+                <p >{{'Relailer Information/Buying Point' | translate}}</p>
             </div>
             
             <!-- *ngIf="data.user_type!='3'" -->
             <div class="ragistration-fields">
                 <div class="cs-form">
                     <ion-list>
-                        <ion-item class="cs-input">
-                            <ion-label floating>{{'Counter Name (optional)' | translate}}</ion-label>
-                            <ion-input type="text" name="parent_counter_name " pattern="[a-zA-Z ]+" ng-pattern-restrict #parent_counter_name="ngModel" [(ngModel)]="data.parent_counter_name "></ion-input>
+                        <ion-item class="cs-input" [ngClass]="{'error':f.submitted && parent_counter_name?.invalid}">
+                            <ion-label floating>{{'Shop Name' | translate}}*</ion-label>
+                            <ion-input type="text" name="parent_counter_name " pattern="[a-zA-Z ]+" ng-pattern-restrict #parent_counter_name="ngModel" [(ngModel)]="data.parent_counter_name" required></ion-input>
                         </ion-item>
                         
                         <ion-item class="cs-input">
@@ -217,7 +217,7 @@
                         </ion-item>
                         <!-- <ion-item class="cs-input">
                             <ion-label floating>{{'Address'}}</ion-label>
-                            <ion-input type="text" name="dealer_address " #dealer_address="ngModel" [(ngModel)]="data.dealer_address"></ion-input>
+                            <ion-input type="text" name="dealer_address " #_address="ngModel" [(ngModel)]="data.dealer_address"></ion-input>
                         </ion-item> -->
                     </ion-list>
                 </div>
@@ -233,32 +233,32 @@
             <div class="cs-form">
                 <ion-list>
                     <ion-item class="cs-input mb0 mt10" [ngClass]="{'error':f.submitted && account_holder_name?.invalid}">
-                        <ion-label floating>{{'Account Holder Name' | translate}}*</ion-label>
-                        <ion-input type="text"  name="account_holder_name"  ng-pattern-restrict #account_holder_name ="ngModel" [(ngModel)]="data.account_holder_name " required></ion-input>
+                        <ion-label floating>{{'Account Holder Name' | translate}}</ion-label>
+                        <ion-input type="text"  name="account_holder_name"  ng-pattern-restrict #account_holder_name ="ngModel" [(ngModel)]="data.account_holder_name "></ion-input>
                     </ion-item>
                     
                     <ion-item class="cs-input mb0 mt10" [ngClass]="{'error':f.submitted && bank_name?.invalid}">
-                        <ion-label floating>{{'Bank Name' | translate}}*</ion-label>
-                        <ion-input type="text"  name="bank_name " pattern="[\x00-\x7F]+" ng-pattern-restrict #bank_name ="ngModel" [(ngModel)]="data.bank_name " required></ion-input>
+                        <ion-label floating>{{'Bank Name' | translate}}</ion-label>
+                        <ion-input type="text"  name="bank_name " pattern="[\x00-\x7F]+" ng-pattern-restrict #bank_name ="ngModel" [(ngModel)]="data.bank_name "></ion-input>
                     </ion-item>
                     
                     
                     <ion-item class="cs-input mb0 mt10" [ngClass]="{'error':f.submitted && account_no?.invalid}">
-                        <ion-label floating>{{'Account No.' | translate}}*</ion-label>
-                        <ion-input type="tel" name="account_no " #account_no ="ngModel" [(ngModel)]="data.account_no" minlength="9" maxlength="18"  required></ion-input>
+                        <ion-label floating>{{'Account No.' | translate}}</ion-label>
+                        <ion-input type="tel" name="account_no " #account_no ="ngModel" [(ngModel)]="data.account_no" minlength="9" maxlength="18"></ion-input>
                     </ion-item>
                     
                     <ion-item class="cs-input mb0 mt10" [ngClass]="{'error':f.submitted && ifsc_code?.invalid}">
-                        <ion-label floating>{{'IFSC Code' | translate}}*</ion-label>
-                        <ion-input type="text"  name="ifsc_code " #ifsc_code ="ngModel" [(ngModel)]="data.ifsc_code"  pattern="^[A-z]{4}[0][A-z0-9]{6}$" required></ion-input>
+                        <ion-label floating>{{'IFSC Code' | translate}}</ion-label>
+                        <ion-input type="text"  name="ifsc_code " #ifsc_code ="ngModel" [(ngModel)]="data.ifsc_code"  pattern="^[A-z]{4}[0][A-z0-9]{6}$"></ion-input>
                     </ion-item>	
                     <p class="alert-line" *ngIf="ifsc_code.errors?.pattern">{{'Invaild IFSC Code'   | translate}}</p>
 
 
 
                     <div class="upload-document" (click)="onUploadBank()">
-                        <p *ngIf="data.cheque_image==''"><i class="material-icons">add_circle</i><br>{{'Upload Document*' | translate}}</p>
-                        <img src="{{data.doc_edit_id ? uploadurl+data.cheque_image : data.cheque_image}}" *ngIf="data.cheque_image != ''" required>
+                        <p *ngIf="data.cheque_image==''"><i class="material-icons">add_circle</i><br>{{'Cheque/Passbook Image' | translate}}</p>
+                        <img src="{{data.doc_edit_id ? uploadurl+data.cheque_image : data.cheque_image}}" *ngIf="data.cheque_image != ''">
                         
                     </div>
                     

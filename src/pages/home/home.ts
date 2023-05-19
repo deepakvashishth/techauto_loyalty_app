@@ -62,6 +62,7 @@ export class HomePage {
     offer_detail:any={};
     language:any=[];
     toggle:boolean = false;
+    Status_flag: number;
     constructor(public navCtrl: NavController, public navParams: NavParams, public service:DbserviceProvider,public loadingCtrl:LoadingController,public storage:Storage, private barcodeScanner: BarcodeScanner,public alertCtrl:AlertController,public modalCtrl: ModalController,private push: Push,public translate:TranslateService,public constant:ConstantProvider,public socialSharing:SocialSharing) {
         this.presentLoading();
         this.notification();
@@ -113,9 +114,19 @@ export class HomePage {
             this.karigar_detail=r['karigar'];
             this.appbanner=r['appbanner'];
             console.log(this.appbanner);
+           this.Status_flag =  this.karigar_detail.Status_flag;
+            console.log( this.Status_flag);
             
             console.log(this.karigar_detail.status);
+            console.log(r['status'] == 'Verified' &&  this.Status_flag==1);
             
+            if(r['status'] == 'Verified' &&  this.Status_flag==1){
+                this.translate.get("Welcome to tal family- enjoy 100 welcome points.")
+                .subscribe(resp=>{
+                    this.showSuccess(resp);
+                })
+                return;
+            }
             if(this.karigar_detail.user_type!=3){
                 
                 this.offer_detail=r['offer'];

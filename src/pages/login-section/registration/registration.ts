@@ -40,7 +40,7 @@ export class RegistrationPage {
     constructor(public navCtrl: NavController, public navParams: NavParams, public service:DbserviceProvider,public alertCtrl:AlertController ,public actionSheetController: ActionSheetController,private camera: Camera,private loadingCtrl:LoadingController,private transfer: FileTransfer,public modalCtrl: ModalController,private storage:Storage,public translate:TranslateService, public constant:ConstantProvider) {
         this.uploadurl = this.constant.upload_url;
         this.data.mobile_no = this.navParams.get('mobile_no');
-        this.data.document_type='Adharcard';
+        this.data.document_type='Aadharcard';
         this.mode = navParams.get('mode')
         this.data.profile='';
         this.data.document_image='';
