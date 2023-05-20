@@ -13,7 +13,7 @@ export class ConstantProvider {
   public rootUrl: string = 'https://apps.abacusdesk.com/techauto/dd_api/';  
   public server_url: string = this.rootUrl + 'index.php/app/';
   public upload_url: string ='https://apps.abacusdesk.com/techauto/dd_api/app/uploads/';
-  public upload_url3: string ='https://apps.abacusdesk.com/techauto/dd_api/app/uploads/Org/';
+  // public upload_url3: string ='https://apps.abacusdesk.com/techauto/dd_api/app/uploads/Org/';
 
 
 
