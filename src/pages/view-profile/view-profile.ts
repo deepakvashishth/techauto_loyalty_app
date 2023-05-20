@@ -17,6 +17,7 @@ export class ViewProfilePage {
   profile_pic:any='';
   type:any='';
   uploadUrl:any='';
+
   loading:Loading;
   filter: any;
 
@@ -26,6 +27,7 @@ export class ViewProfilePage {
   
   ionViewDidLoad() {
     this.uploadUrl = this.constant.upload_url;
+
     this.get_user_lang();
   
     this.profile_pic=this.navParams.get("Image");

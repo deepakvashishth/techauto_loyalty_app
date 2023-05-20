@@ -48,6 +48,7 @@ export class HomePage {
     loading:Loading;
     karigar_detail:any={};
     last_point:any='';
+    point_details:any='';
     today_point:any='';
     appbanner:any={};
     qr_code:any='';
@@ -131,6 +132,7 @@ export class HomePage {
                 
                 this.offer_detail=r['offer'];
                 this.last_point=r['last_point'];
+                this.point_details=r['point_details'];
                 this.notify_cn=r['notifications'];
                 this.today_point=r['today_point'];
                 this.total_balance_point = parseInt( this.karigar_detail.balance_point) + parseInt(this.karigar_detail.referal_point_balance );
@@ -474,6 +476,10 @@ export class HomePage {
         this.navCtrl.push(ProfilePage,{'lang':this.lang})
     }
     
+    change_language(){
+        this.navCtrl.push(LanguagePage);
+    }
+
     goOnScanePage(){
         this.navCtrl.push(ScanPage);
     }
@@ -541,8 +547,11 @@ export class HomePage {
     }
     viewDetail()
     {
-        this.modalCtrl.create(ViewProfilePage, {"Image": this.lang !='en' ? this.offer_detail.hin_term_image : this.offer_detail.term_image}).present();
+        console.log( this.point_details);
+        this.modalCtrl.create(ViewProfilePage, {"Image": this.point_details,"type":"point_img"}).present();
     }
+   
+    
     viewDetail2()
     {
         this.navCtrl.push(ProductImgPage)
@@ -747,5 +756,9 @@ export class HomePage {
         catch(Error){
             return null;
         }
-    }    
+    }  
+    
+    
+
+   
 }
