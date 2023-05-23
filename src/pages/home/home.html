@@ -8,7 +8,7 @@
 
 
         <ion-buttons end class="mr10">
-            <button ion-button icon-only  clear color="secondary" (click)="gotoNotification()">
+            <button ion-button icon-only clear color="secondary" (click)="gotoNotification()">
                 <ion-icon name="notifications" color="secondary"></ion-icon>
                 <span *ngIf="notify_cn > 0" class="custom-point notification-count">{{notify_cn}}</span>
             </button>
@@ -19,14 +19,16 @@
         </ion-buttons>
     </ion-toolbar>
 </ion-header>
-<ion-content >
+<ion-content>
     <ion-refresher (ionRefresh)="doRefresh($event)">
-        <ion-refresher-content pullingIcon="arrow-dropdown" pullingText="{{'Pull to refresh' | translate}}" refreshingSpinner="circles" refreshingText="{{'Refreshing...'| translate}}">
+        <ion-refresher-content pullingIcon="arrow-dropdown" pullingText="{{'Pull to refresh' | translate}}"
+            refreshingSpinner="circles" refreshingText="{{'Refreshing...'| translate}}">
         </ion-refresher-content>
     </ion-refresher>
-    
+
     <div class="slide-image">
-        <ion-slides *ngIf="appbanner.length && appbanner.length>1 " [initialSlide]="0" pager autoplay="1000" speed="1000" loop="true">
+        <ion-slides *ngIf="appbanner.length && appbanner.length>1 " [initialSlide]="0" pager autoplay="1000"
+            speed="1000" loop="true">
             <ion-slide *ngFor="let row of appbanner">
                 <img [src]="uploadUrl+row.banner">
             </ion-slide>
@@ -38,23 +40,25 @@
             <img src="../../assets/imgs/appbanner.png">
         </div>
     </div>
-    
+
     <div class="pl16 pr16">
         <div class="center-card">
-            <div class="cs-profile" >
+            <div class="cs-profile">
                 <img src="assets/imgs/man.svg" *ngIf="karigar_detail.profile ==''">
-                <img src="{{uploadUrl+karigar_detail.profile}}"  (click)="viewProfiePic()" *ngIf="karigar_detail.profile != ''">
+                <img src="{{uploadUrl+karigar_detail.profile}}" (click)="viewProfiePic()"
+                    *ngIf="karigar_detail.profile != ''">
                 <ion-icon name="person" *ngIf="karigar_detail.profile"></ion-icon>
             </div>
 
             <div class="profile-progress">
-                <p>{{'Your profile' | translate}} <span>{{karigar_detail.profile_completed}}%</span> {{'complete' | translate}}</p>
+                <p>{{'Your profile' | translate}} <span>{{karigar_detail.profile_completed}}%</span> {{'complete' |
+                    translate}}</p>
                 <div class="out">
                     <div class="in  {{'wp' + karigar_detail.profile_completed}}">&nbsp;</div>
                 </div>
                 <h1>{{'Welcome' | translate}}</h1>
                 <h2>{{karigar_detail.full_name | titlecase}}</h2>
-               <p>{{karigar_detail.mobile_no}}</p>
+                <p>{{karigar_detail.mobile_no}}</p>
             </div>
 
 
@@ -67,17 +71,17 @@
                     <h2>{{total_balance_point}}</h2>
                     <p>{{'Total Points' | translate }}</p>
                 </div>
-                
+
             </div>
 
             <button class="capitalize" ion-button icon-start round block color="secondary" (click)="scanCoupon()">
                 <ion-icon name="qr-scanner"></ion-icon>
                 {{'Scan QR Code' | translate}}
-              </button>
-           
+            </button>
+
         </div>
-        
-        
+
+
         <div class="outline-btn" (click)="goOnRedeemListPage();">
             {{'Redeem Your Reward Points' | translate}}
         </div>
@@ -86,7 +90,7 @@
 </ion-content>
 
 
-<div class="sidebar"  [ngClass] ="{'active' : toggle == true}"  (click)="toggleValue('true')">
+<div class="sidebar" [ngClass]="{'active' : toggle == true}" (click)="toggleValue('true')">
     <div class="side-menu">
         <ion-list>
             <ion-item class="transparent" (click)="goOnDigitalcatalogPage();">
@@ -117,7 +121,7 @@
                 </ion-icon>
                 {{'Redeem My Points' | translate}}
             </ion-item>
-            
+
 
             <ion-item class="transparent" (click)="gotoHistory();">
                 <ion-icon item-start color="primary">
@@ -130,19 +134,19 @@
             <ion-item class="transparent" (click)="viewDetail2();">
                 <ion-icon item-start color="primary">
                     <div class="icons">
-                    <img src="assets/imgs/Gallery.png">
+                        <img src="assets/imgs/Gallery.png">
                     </div>
                 </ion-icon>
                 {{'Digital Catalogues' | translate}}
             </ion-item>
-           
-                <ion-item class="transparent" (click)="goOnFeedbackPage()">
-                    <ion-icon item-start color="primary">
-                        <img src="assets/navigation/chat.svg">
 
-                    </ion-icon>
-                    {{'Chat with us' | translate}}
-                </ion-item>
+            <ion-item class="transparent" (click)="goOnFeedbackPage()">
+                <ion-icon item-start color="primary">
+                    <img src="assets/navigation/chat.svg">
+
+                </ion-icon>
+                {{'Chat with us' | translate}}
+            </ion-item>
 
 
 
@@ -176,7 +180,7 @@
                 </ion-icon>
                 {{'Contact Us' | translate}}
             </ion-item>
-           
+
             <ion-item class="transparent" (click)="viewProfie();">
                 <ion-icon item-start color="primary">
                     <img src="assets/navigation/person.svg">
@@ -190,32 +194,14 @@
                     <img src="assets/imgs/language.png">
 
                 </ion-icon>
-                {{'Language' | translate}} 
-
+                {{'Language' | translate}}
             </ion-item>
-      
-            <!-- <li (click)="viewDetail()">
-                <div class="img-view">
-                    <img src="assets/imgs/home-icon/gift-point.svg">
-                </div>
-                <p>{{'Advance Point Detail' | translate}}</p>
-            </li> -->
-       
-
-
             <ion-item class="transparent lgn" (click)="viewDetail();">
                 <ion-icon item-start color="primary">
-                    <!-- <img src="assets/imgs/home-icon/gift-point.svg"> -->
                     <img src="assets/imgs/gift-box.png">
-
                 </ion-icon>
-                {{'Techauto Point Detail' | translate}} 
-
+                {{'TechAuto Point Detail' | translate}}
             </ion-item>
-
-
-
-           
         </ion-list>
     </div>
 </div>

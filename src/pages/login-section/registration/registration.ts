@@ -299,7 +299,7 @@ export class RegistrationPage {
                     title:resp+'!',
                     cssClass:'action-close',
                     subTitle: text,
-                    buttons: [this.ok]
+                    buttons: ['OK']
                 });
                 alert.present();
             })

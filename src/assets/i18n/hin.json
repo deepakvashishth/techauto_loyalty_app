@@ -21,7 +21,7 @@
       "First Name":"पहला नाम",
       "Last Name  (optional)":"उपनाम (वैकल्पिक)",
       "Male":"पुरुष",
-      "Redeem Tracker":"ट्रैकर को रिडीम करें",
+      "Redeem Tracker":"गिफ्ट ट्रैकर",
       "Female":"महिला",
       "Mobile No":"मोबाइल नंबर",
       "Mobile No (optional)":"मोबाइल नंबर (वैकल्पिक)",
@@ -64,13 +64,13 @@
 "Redeem Your Reward Points":"अपने रिवॉर्ड प्वॉइंट रिडीम करें",
 "Welcome":"स्वागत",
 "Your profile":"आपकी प्रोफ़ाइल",
-"complete":"पूरा",
+"complete":"पूरा है",
 "Last 7 Days point":"पिछले 7 दिनों का अंक",
 "Total Points":"कुल अंक",
 "Scan QR Code":"क्यू आर कोड स्कैन करें",
 "Catalogues":"कैटलाग",
-"SCHEME":"योजना",
-"Scheme":"योजना",
+"SCHEME":"स्कीम",
+"Scheme":"स्कीम",
 "Home":"घर",
 
 
@@ -223,6 +223,13 @@
       "Visting Card":"विजिटिंग कार्ड",
       "Upload Visting Card":"विज़िटिंग कार्ड अपलोड करें",
       "Other Point":"अन्य अंक",
+      "Language":"भाषा",
+      "TechAuto Point Detail":"Techauto प्वाइंट विवरण",
+      "Bank details are missing Please update your bank details":"बैंक विवरण गुम हैं कृपया अपना बैंक विवरण अपडेट करें",
+      "Update detail":"अपडेट विवरण",
+      "Documents are missing Please update your documents":"दस्तावेज़ गुम हैं कृपया अपने दस्तावेज़ अपडेट करें",
+      "Cancellation Policy":"रद्द करने की नीति",
+
       "Upload Document Is Required!":"डाक्यमेन्ट अपलोड करना आवश्यक है!"
 
       

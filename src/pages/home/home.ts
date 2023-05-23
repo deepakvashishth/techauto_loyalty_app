@@ -121,10 +121,10 @@ export class HomePage {
             console.log(this.karigar_detail.status);
             console.log(r['status'] == 'Verified' &&  this.Status_flag==1);
             
-            if(r['status'] == 'Verified' &&  this.Status_flag==1){
+            if(this.karigar_detail.status == 'Verified' && this.karigar_detail.Status_flag ==1){
                 this.translate.get("Welcome to tal family- enjoy 100 welcome points.")
                 .subscribe(resp=>{
-                    this.showSuccess(resp);
+                    this.showSuccesswelcome(resp);
                 })
                 return;
             }
@@ -143,6 +143,39 @@ export class HomePage {
     }
     
     
+
+    
+ showSuccesswelcome(text)
+ { 
+     let alert = this.alertCtrl.create({
+         title:'Success!',
+         cssClass:'action-close',
+         subTitle: text,
+         enableBackdropDismiss:false,
+         buttons: [ 
+             {text: 'OK',
+                 handler: () => {
+
+                    this.welcome();
+                 } 
+             }
+         ]
+     });
+     alert.present();
+ }
+ 
+
+ welcome()
+ {
+    console.log('saa');
+    
+     this.service.post_rqst({'karigar_id':this.service.karigar_id},'app_karigar/welcome_flag')
+     .subscribe((r)=>
+     {
+         console.log(r);
+    
+     });
+ } 
     getofferBannerList()
     {
         console.log(this.service.karigar_id);
