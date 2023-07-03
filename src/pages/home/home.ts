@@ -673,7 +673,7 @@ export class HomePage {
         // let image = "https://play-lh.googleusercontent.com/FEDtMP_dyMgM8rJtp4MFdp60g0fLuBYNbu3pBNsNH52knTsG1yDuNs56CFYu_X3XqYk=s180-rw";
         
         let image = "";
-        let app_url = "https://play.google.com/store/apps/details?id=com.techauto.app";
+        let app_url = "https://play.google.com/store/apps/details?id=com.teltechauto.app";
         
         this.socialSharing.share("Hey there join me (" + this.karigar_detail.full_name + "-" + this.karigar_detail.mobile_no + ") on Tech Auto ,app. Enter my code *" + this.karigar_detail.referral_code + "* to earn points back in your wallet!", "Reffral", image, app_url)
         .then(resp=>{

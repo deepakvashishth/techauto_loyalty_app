@@ -32,7 +32,7 @@
     "@ionic-native/geolocation": "^4.0.0",
     "@ionic-native/in-app-browser": "^5.15.0",
     "@ionic-native/push": "^4.20.0",
-    "@ionic-native/social-sharing": "^4.0.0",
+    "@ionic-native/social-sharing": "^4.20.0",
     "@ionic-native/splash-screen": "~4.20.0",
     "@ionic-native/status-bar": "~4.20.0",
     "@ionic/storage": "2.2.0",
@@ -55,8 +55,6 @@
     "cordova-plugin-splashscreen": "5.0.2",
     "cordova-plugin-statusbar": "2.4.2",
     "cordova-plugin-whitelist": "1.3.3",
-    "cordova-plugin-x-socialsharing": "5.6.4",
-    "es6-promise-plugin": "4.2.2",
     "ionic": "^5.4.16",
     "ionic-angular": "3.9.5",
     "ionicons": "3.0.0",
@@ -72,6 +70,7 @@
   "devDependencies": {
     "@ionic/app-scripts": "3.2.4",
     "@ionic/lab": "^3.2.10",
+    "cordova-android": "^9.1.0",
     "cordova-android-support-gradle-release": "^3.0.1",
     "cordova-plugin-androidx-adapter": "^1.1.3",
     "cordova-plugin-device": "^2.0.2",
@@ -79,7 +78,9 @@
     "cordova-plugin-splashscreen": "^5.0.2",
     "cordova-plugin-statusbar": "^2.4.2",
     "cordova-plugin-whitelist": "^1.3.3",
+    "cordova-plugin-x-socialsharing": "^6.0.4",
     "cordova-support-google-services": "^1.3.2",
+    "es6-promise-plugin": "^4.2.2",
     "phonegap-plugin-push": "^2.3.0",
     "typescript": "~2.6.2",
     "ws": "3.3.2"
@@ -98,10 +99,6 @@
       },
       "cordova-plugin-inappbrowser": {},
       "cordova-plugin-app-version": {},
-      "cordova-plugin-x-socialsharing": {
-        "ANDROID_SUPPORT_VERSION": "27.+",
-        "ANDROID_SUPPORT_V4_VERSION": "24.1.1+"
-      },
       "cordova-plugin-device-orientation": {},
       "cordova-plugin-badge": {},
       "cordova-plugin-file-transfer": {},
@@ -118,7 +115,8 @@
       },
       "cordova-plugin-document-viewer": {},
       "cordova-plugin-androidx": {},
-      "cordova-plugin-androidx-adapter": {}
+      "cordova-plugin-androidx-adapter": {},
+      "cordova-plugin-x-socialsharing": {}
     },
     "platforms": [
       "browser",

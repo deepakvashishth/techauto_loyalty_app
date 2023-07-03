@@ -300,7 +300,7 @@ export class MyApp {
                                 {text: this.cancl, },
                                 {text: this.upd_now,
                                     handler: () => {
-                                        window.open('https://play.google.com/store/apps/details?id=com.techauto.app&hl=en','_system','location=yes');
+                                        window.open('https://play.google.com/store/apps/details?id=com.teltechauto.app&hl=en','_system','location=yes');
                                     } 
                                 }
                             ]
