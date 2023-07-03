@@ -170,7 +170,7 @@
                     
                     
                     
-                    <ion-item class="cs-input mb0 mt10" *ngIf="data.document_type=='Adharcard'" [ngClass]="{'error':f.submitted && document_no?.invalid}">
+                    <ion-item class="cs-input mb0 mt10" *ngIf="data.document_type=='Aadharcard'" [ngClass]="{'error':f.submitted && document_no?.invalid}">
                         <ion-label floating>{{'Aadhaar Number' | translate}}*</ion-label>
                         <ion-input type="tel" name="document_no" #document_no="ngModel" [(ngModel)]="data.document_no" maxlength="12" minlength="12" required></ion-input>
                     </ion-item>
