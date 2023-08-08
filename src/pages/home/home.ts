@@ -206,6 +206,37 @@ export class HomePage {
     
     
     scanCoupon() {
+
+
+
+        if( this.karigar_detail.status !='Verified'){
+            let alert = this.alertCtrl.create({
+                title:'Sorry!',
+                cssClass:'action-close',
+                subTitle:"Your current profile status is not  <strong>“Verified”</strong>. You only scan the coupon codes when your profile status is <strong class=Approved>“Verified”</strong>. To know more, you can call us at <a href=tel:+91 1493 294 181>+91 1493 294 181</a> or chat with us.",
+                buttons: [
+                    // {
+                    //     text: 'Chat With Us',
+                    //     handler: () => {
+                    //         this.goChat();
+                    //     }
+                    // },
+                    {
+                        text: 'Okay',
+                        handler: () => {
+                        }
+                    }
+                ]
+            });
+            alert.present();  
+            return
+        }
+
+
+
+
+
+
         let alert = this.alertCtrl.create();
         alert.setTitle('Coupon');
         
