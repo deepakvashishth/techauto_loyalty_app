@@ -224,6 +224,40 @@
             </div>
         </ng-container>
         
+
+
+
+
+
+        <ng-container *ngIf="data.user_type=='1'">
+            <div class="heading line" >
+                <p >{{'Sales Executive Information' | translate}}</p>
+            </div>
+            
+            <!-- *ngIf="data.user_type!='3'" -->
+            <div class="ragistration-fields">
+                <div class="cs-form">
+                    <ion-list>
+                        <ion-item class="cs-input" [ngClass]="{'error':f.submitted && sales_executive_name?.invalid}">
+                            <ion-label floating>{{'Sales Executive Name (optional)' | translate}}</ion-label>
+                            <ion-input type="text" name="sales_executive_name " pattern="[a-zA-Z ]+" ng-pattern-restrict #sales_executive_name="ngModel" [(ngModel)]="data.sales_executive_name" ></ion-input>
+                        </ion-item>
+                        
+                       
+                        <ion-item class="cs-input mb0" [ngClass]="{'error':f.submitted && sales_executive_mobile?.invalid}">
+                            <ion-label floating>{{'Sales Executive Mobile No (optional)' | translate}}.</ion-label>
+                            <ion-input type="tel" name="sales_executive_mobile " #sales_executive_mobile="ngModel" [(ngModel)]="data.sales_executive_mobile" maxlength="10" minlength="10"></ion-input>
+                        </ion-item>
+                       
+                    </ion-list>
+                </div>
+            </div>
+        </ng-container>
+
+
+
+
+
         
         
         <div class="heading line">

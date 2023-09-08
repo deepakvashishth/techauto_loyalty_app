@@ -96,6 +96,22 @@
                     </div>
                
                 </div>
+
+                <div class="profile-card" *ngIf="karigar_detail.user_type=='1'">
+                    <div class="text-center">
+                        <h2>{{ 'Sales Executive Information' | translate }}</h2>
+                    </div>
+                    <div class="text-box">
+                        <p>{{'Sales Executive Name' | translate}}</p>
+                        <h6>{{karigar_detail.sales_executive_name ? karigar_detail.sales_executive_name:'---'}}</h6>
+                    </div>
+                    <div class="text-box">
+                        <p>{{'Sales Executive Mobile No' | translate}}</p>
+                        <h6>{{ karigar_detail.sales_executive_mobile ? karigar_detail.sales_executive_mobile:'---'}} </h6>
+                    </div>
+               
+                </div>
+
                 <div class="profile-card" >
                     <div class="text-center">
                         <h2>{{ 'Bank Information' | translate }}</h2>
