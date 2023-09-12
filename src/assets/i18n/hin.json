@@ -230,7 +230,10 @@
       "Documents are missing Please update your documents":"दस्तावेज़ गुम हैं कृपया अपने दस्तावेज़ अपडेट करें",
       "Cancellation Policy":"रद्द करने की नीति",
 
-      "Upload Document Is Required!":"डाक्यमेन्ट अपलोड करना आवश्यक है!"
+      "Upload Document Is Required!":"डाक्यमेन्ट अपलोड करना आवश्यक है!",
+
+      "Sales Executive Mobile No":"सेल्स एग्जीक्यूटिव मोबाइल नंबर",
+      "Sales Executive Name":"बिक्री कार्यकारी का नाम"
 
       
 }
