@@ -196,15 +196,15 @@ export class RegistrationPage {
                return;
             }
 
-            if(this.data.cheque_image == '')
-            {
+            // if(this.data.cheque_image == '')
+            // {
 
-               this.translate.get("Upload Bank Image Is Required!")
-               .subscribe(resp=>{
-                   this.showAlert(resp);
-               });
-               return;
-            }
+            //    this.translate.get("Upload Bank Image Is Required!")
+            //    .subscribe(resp=>{
+            //        this.showAlert(resp);
+            //    });
+            //    return;
+            // }
 
             this.presentLoading();
             console.log('data');
