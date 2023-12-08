@@ -186,15 +186,15 @@ export class RegistrationPage {
         
         submit()
         {
-            if(this.data.document_image == '')
-            {
+            // if(this.data.document_image == '')
+            // {
 
-               this.translate.get("Upload Document Is Required!")
-               .subscribe(resp=>{
-                   this.showAlert(resp);
-               });
-               return;
-            }
+            //    this.translate.get("Upload Document Is Required!")
+            //    .subscribe(resp=>{
+            //        this.showAlert(resp);
+            //    });
+            //    return;
+            // }
 
             // if(this.data.cheque_image == '')
             // {
@@ -228,10 +228,17 @@ export class RegistrationPage {
                 this.loading.dismiss();
                 this.karigar_id=r['id'];
                 console.log(this.karigar_id);
+
+
+            // if(r['status']=="SUCCESS")
+            // {
+            //     this.showAlert(r['text_msg']);
+            //     return;
+            // }
                 
                 if(r['status']=="SUCCESS")
                 {
-                    this.showSuccess("Registration Successfully!");
+                    this.showSuccess(r['text_msg']);
                     this.service.post_rqst({'mobile_no': this.data.mobile_no ,'mode' :'App'},'auth/login')
                     .subscribe( (r) =>
                     {
@@ -262,11 +269,31 @@ export class RegistrationPage {
                                 return;
                             }
                         }
+
+
+                       
                         
                         this.navCtrl.push(TabsPage);
                         // this.navCtrl.push(HomePage);
                     });
                 }
+                // else if(r['status']=="UPDATE")
+                // {
+                //     this.showSuccess("Profile update Successfully!");
+                   
+
+                // }
+                else if(r['status']=="UPDATE")
+                {
+                    this.translate.get("Profile update Successfully")
+                    .subscribe(resp=>{
+                        this.showSuccess(resp+"!");
+                    });
+                        this.navCtrl.push(HomePage);
+                    
+                }
+
+
                 else if(r['status']=="EXIST")
                 {
                     this.translate.get("Already Registered")
@@ -274,6 +301,11 @@ export class RegistrationPage {
                         this.showAlert(resp+"!");
                     })
                 }
+
+
+              
+
+
             });
         }
         namecheck(event: any) 
@@ -317,6 +349,7 @@ export class RegistrationPage {
                 alert.present();
             })
         }
+        
         openeditprofile()
         {
             let actionsheet = this.actionSheetController.create({

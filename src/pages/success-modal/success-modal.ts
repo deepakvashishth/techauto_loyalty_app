@@ -142,6 +142,13 @@ export class SuccessModalPage {
                   })
                   return;
                 }
+
+
+                else if(r['status']=="Bonus"){
+                  this.showSuccess(r['text_msg']);
+                  this.navCtrl.push(HomePage);
+
+              }
                 
                 else if(r['status'] == 'VALID'){
                   let productData

@@ -115,7 +115,7 @@ export class CancelpolicyModalPage {
             }
         }
         else if(this.redeemType == 'Cash'){
-            if(!this.data.account_holder_name  || !this.data.bank_name || !this.data.account_no || !this.data.ifsc_code){
+            if(!this.data.account_holder_name  || !this.data.bank_name || !this.data.account_no || !this.data.ifsc_code || !this.data.document_no || !this.data.document_image){
                 this.showAlert("Bank details are missing");
                 return;
             }
@@ -138,6 +138,9 @@ export class CancelpolicyModalPage {
             this.data.account_no='';
             this.data.account_holder_name='';
             this.data.bank_name='';
+            this.data.document_no='';
+            this.data.document_image='';
+
         }
         this.service.post_rqst( {'karigar_id':this.data.karigar_id,'gift_id':this.data.gift_id,'redeem_type':this.data.redeem_type,'offer_id':this.data.offer_id,'redeem_amount':this.data.redeem_amount,'ifsc_code':this.data.ifsc_code,'account_no':this.data.account_no,'bank_name':this.data.bank_name,'account_holder_name':this.data.account_holder_name,'shipping_address':this.data.shipping_address,'check':this.data.check},'app_karigar/redeemRequest')
         .subscribe( (r) =>

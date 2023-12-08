@@ -48,6 +48,8 @@
                                     <td>{{'IFSC Code' | translate}}</td>
                                     <th>{{data.ifsc_code}}</th>
                                 </tr>
+
+                               
                                 
                                 <tr *ngIf="data.payment_type">
                                     <td> {{data.payment_type }} {{'Number' | translate}}</td>
@@ -59,12 +61,12 @@
                         
                         
                         
-                        <ng-container *ngIf="!data.account_holder_name || !data.account_no || !data.bank_name || !data.ifsc_code || !data.cheque_image">
+                        <ng-container *ngIf="!data.account_holder_name || !data.account_no || !data.bank_name || !data.ifsc_code || !data.cheque_image || !data.document_no || !data.document_image">
                             <div class="adhar alert-card">
                                 <table>
                                     <tr>
                                         <td>
-                                            <p>{{ 'Bank details are missing Please update your bank details' | translate}}</p>
+                                            <p>{{ 'Bank details and Document details are missing; Please update' | translate}}</p>
                                             <a round ion-button small (click)="goRegestrationsPage()">{{'Update detail' | translate}}</a>
                                         </td>
                                     </tr>

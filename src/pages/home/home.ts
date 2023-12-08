@@ -464,6 +464,14 @@ export class HomePage {
                                         })
                                         return;
                                     }
+
+
+                                    else if(r['status']=="Bonus"){
+                                        this.showSuccess(r['text_msg']);
+                                        this.navCtrl.push(HomePage);
+
+                                    }
+
                                     
                                     
                                     // if(r['result'].status == 'SUCCESS'){

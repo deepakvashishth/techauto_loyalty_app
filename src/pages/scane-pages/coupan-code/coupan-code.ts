@@ -51,6 +51,14 @@ export class CoupanCodePage {
         this.showAlert("Coupon Already Used");
         return;
       }
+
+      else if(r['status']=="Bonus"){
+        this.showSuccess(r['text_msg']);
+        this.navCtrl.push(HomePage);
+
+    }
+
+
       else if(r['status'] == 'UNASSIGNED OFFER'){
         this.showAlert("Your Account Under Verification");
         return;
