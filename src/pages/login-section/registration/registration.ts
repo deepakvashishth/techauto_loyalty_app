@@ -238,7 +238,7 @@ export class RegistrationPage {
                 
                 if(r['status']=="SUCCESS")
                 {
-                    this.showSuccess(r['text_msg']);
+                    // this.showSuccess(r['text_msg']);
                     this.service.post_rqst({'mobile_no': this.data.mobile_no ,'mode' :'App'},'auth/login')
                     .subscribe( (r) =>
                     {
@@ -266,7 +266,7 @@ export class RegistrationPage {
                             {
                                 let contactModal = this.modalCtrl.create(AboutusModalPage);
                                 contactModal.present();
-                                return;
+                                this.navCtrl.push(HomePage);
                             }
                         }
 
