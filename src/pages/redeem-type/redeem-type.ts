@@ -90,7 +90,7 @@ export class RedeemTypePage {
     let alert = this.alertCtrl.create({
         title:'Sorry!',
         cssClass:'action-close status-alert',
-        subTitle:"Your current profile status is not <strong class=Approved>“Verified”</strong>.To know more, you can call us at <a href=tel:+91 1493 294 181>+91 1493 294 181</a>.",
+        subTitle:"Your current profile status is not <strong class=Approved>“Verified”</strong>.To know more, you can call us at <a href=tel:+91 9302500080>+91 9302500080</a>.",
         buttons: [
             {
                 text: 'Okay',

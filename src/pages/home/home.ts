@@ -213,7 +213,7 @@ export class HomePage {
             let alert = this.alertCtrl.create({
                 title:'Sorry!',
                 cssClass:'action-close',
-                subTitle:"Your current profile status is not  <strong>“Verified”</strong>. You only scan the coupon codes when your profile status is <strong class=Approved>“Verified”</strong>. To know more, you can call us at <a href=tel:+91 1493 294 181>+91 1493 294 181</a> or chat with us.",
+                subTitle:"Your current profile status is not  <strong>“Verified”</strong>. You only scan the coupon codes when your profile status is <strong class=Approved>“Verified”</strong>. To know more, you can call us at <a href=tel:+91 9302500080>+91 9302500080</a> or chat with us.",
                 buttons: [
                     // {
                     //     text: 'Chat With Us',
@@ -369,7 +369,7 @@ export class HomePage {
             let alert = this.alertCtrl.create({
                 title:'Sorry!',
                 cssClass:'action-close',
-                subTitle:"Your current profile status is not  <strong>“Verified”</strong>. You only scan the coupon codes when your profile status is <strong class=Approved>“Verified”</strong>. To know more, you can call us at <a href=tel:+91 1493 294 181>+91 1493 294 181</a> or chat with us.",
+                subTitle:"Your current profile status is not  <strong>“Verified”</strong>. You only scan the coupon codes when your profile status is <strong class=Approved>“Verified”</strong>. To know more, you can call us at <a href=tel:+91 9302500080>+91 9302500080</a> or chat with us.",
                 buttons: [
                     // {
                     //     text: 'Chat With Us',
@@ -464,6 +464,14 @@ export class HomePage {
                                         })
                                         return;
                                     }
+
+
+                                    else if(r['status']=="Bonus"){
+                                        this.showSuccess(r['text_msg']);
+                                        this.navCtrl.push(HomePage);
+
+                                    }
+
                                     
                                     
                                     // if(r['result'].status == 'SUCCESS'){
@@ -638,7 +646,7 @@ export class HomePage {
         let alert = this.alertCtrl.create({
             title:'Sorry!',
             cssClass:'action-close status-alert',
-            subTitle:"Your current profile status is not <strong class=Approved>“Verified”</strong>.To know more, you can call us at <a href=tel:+91 1493 294 181>+91 1493 294 181</a>.",
+            subTitle:"Your current profile status is not <strong class=Approved>“Verified”</strong>.To know more, you can call us at <a href=tel:+91 9302500080>+91 9302500080</a>.",
             buttons: [
                 {
                     text: 'Okay',
