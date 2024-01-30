@@ -8,6 +8,7 @@ export class ConstantProvider {
     console.log('Hello ConstantProvider Provider');
   }
 
+  
   // Testing url
 
   public rootUrl: string = 'https://apps.abacusdesk.com/techauto/dd_api/';  

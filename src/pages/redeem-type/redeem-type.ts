@@ -118,7 +118,7 @@ karigar_detail:any ={}
         this.showAlert('Please fill redeem cash value');
         return
       }
-      else if(this.data.redeem_amount >this.walletBal){
+      else if(this.data.redeem_amount >this.redeem_point){
         this.showAlert( 'insufficient points to redeem ');
         return
       }
